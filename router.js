@@ -6,7 +6,7 @@ const {
   updateStudent,
   deleteStudent,
 } = require("./controllers/Student");
-const Student = require("./model/students");
+const Student = require("./model/student");
 
 router.get("/", (req, res) => {
   res.send("Router is working");
