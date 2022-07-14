@@ -2,12 +2,15 @@ const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
+const bodyParser = require("body-parser");
 const studentrouter = require("./routes/students");
 const cors = require("cors");
 
 dotenv.config();
 
-
+bodyParser.urlencoded({ extended: false });
+app.use(bodyParser.json());
+app.set('view engine', 'ejs');
 
 app.use(cors());
 

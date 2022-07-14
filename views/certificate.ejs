@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR GENERATOR</title>
+    <style>
+        .main{
+            background: rgb(209,238,174);
+background: radial-gradient(circle, rgba(9, 11, 7, 0.5) 0%, rgba(16, 23, 18, 0.7) 100%);
+        }
+    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container-fluid vh-100 text-center d-flex align-items-center justify-content-center flex-column main ">
+    <h1 class="my-5 text-bolder text-white">Algoders Community</h1>
+    <div class="card container px-0 ">
+        <div class="card-header text-bolder h5">
+            Certificate for web development
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Student Details</h5>
+          <table class="table table-bordered border-success">
+            <tbody class="text-center text-success">
+              <tr>
+                <th>NAME</th>
+                <th><%=student.name%></th>
+              </tr>
+              <tr>
+                <th>COURSE</th>
+                <th><%=student.course%></th>
+          
+              </tr>
+              <tr>
+                <th>CertificateId</th>
+                <th><%=student.certificateId%></th>
+              </tr>
+              <tr>
+                <th>Github</th>
+                <th><%=student.github%></th>
+              </tr>
+                <tr>
+                    <th>Email</th>
+                    <th><%=student.email%></th>
+                </tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+
+ 
+    </div>
+
+</body>
+</html>

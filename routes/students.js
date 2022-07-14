@@ -2,27 +2,22 @@ const router = require("express").Router();
 const Student = require("../model/student");
 
 
-router.post('/validationLink', async(req, res) => {
-  const certificateId = req.body.certificateId;
-  const student = await Student.findOne({ certificateId});
+router.get('/validation/:id/:certificateId', async(req, res) => {
+  const id = req.params.id;
+  const certificateId = req.params.certificateId;
+  const student = await Student.findOne({ _id: id});
   if(student){
-    const link = `http://localhost:3000/api/student/validation/${student._id}/${certificateId}/`;
-    res.status(200).json(link);
+    if(student.certificateId === certificateId){
+    res.render('certificate', {student: student});
+    }
+    else{
+      res.status(400).json({message: "Invalid request"});
+    }
   }
   else{
-  res.status(404).json({message: "Student not found"});
+  res.status(404).json({message: "Certificate is invalid"});
   }
 
 })
-
-// router.post("/register", async (req, res) => {
-//   const student = new Student(req.body);
-//   try {
-//     await student.save();
-//     res.send(student);
-//   } catch (err) {
-//     res.status(400).send(err);
-//   }
-// });
 
 module.exports = router;
