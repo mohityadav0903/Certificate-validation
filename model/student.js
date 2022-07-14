@@ -14,6 +14,11 @@ const StudentSchema = new mongoose.Schema({
     type: String,
     required: false,  
   },
+  course:{
+   type: String,
+    required: true,
+    default: "Web Development",
+  },
   certificateId: {
     type: String,
     required: true,
