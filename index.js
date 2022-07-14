@@ -1,4 +1,5 @@
 const express = require("express");
+const app = express();
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const studentrouter = require("./routes/students");
@@ -6,8 +7,6 @@ const cors = require("cors");
 
 dotenv.config();
 
-const port = 3000||process.env.PORT;
-const app = express();
 
 
 app.use(cors());
@@ -31,6 +30,6 @@ mongoose
     
   })
 
-app.listen(port, async () => {
-    console.log(`server up on port ${port}`);
+app.listen(3000||process.env.PORT, async () => {
+    console.log(`server up`);
   });
